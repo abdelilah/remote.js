@@ -68,14 +68,13 @@ var socket = io.connect('http://your_host_or_ip:3456');
 ```javascript
 socket.on('connect', function() {
   socket.emit('auth', server.key, function(result){
-    $scope.$apply(function(){
-      if(result.success){
-        result.commands; // contains a list of your commands as defined in your config file
-      }
+    if(result.success){
+      result.commands; // contains a list of your commands as defined in your config file
+    }
 
-      if(result.error){
-        // handle the error
-      }
+    if(result.error){
+      // handle the error
+    }
 });
 ```
 
